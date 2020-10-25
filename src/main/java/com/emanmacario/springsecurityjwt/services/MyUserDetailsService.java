@@ -1,4 +1,4 @@
-package com.emanmacario.springsecurityjwt;
+package com.emanmacario.springsecurityjwt.services;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,6 +15,8 @@ import java.util.ArrayList;
 public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        // TODO: In a real world production, would connect this to a UserRepository to return user from database
+        // TODO: Would also need to hash the database
         return new User("foo", "foo", new ArrayList<>());
     }
 }
